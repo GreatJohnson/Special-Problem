@@ -1,0 +1,13 @@
+<!--
+  Copyright: 2016-2019 ROS小课堂 www.corvin.cn
+  Author: corvin
+  Description: 该启动文件用于加载自定义的home地图,这样就可以进行自动导航了.
+  History:
+    20190102: initial this file.
+-->
+<launch>
+  <!-- load home map -->
+  <node pkg="map_server" type="map_server" name="stdr_load_home_map" args="$(find stdr_navigation)/maps/home.yaml">
+    <remap from="map" to="/amcl/map" />
+  </node>
+</launch>

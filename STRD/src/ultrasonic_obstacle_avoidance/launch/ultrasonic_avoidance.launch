@@ -1,0 +1,16 @@
+<!--
+  Copyright: 2016-2018 www.corvin.cn
+  Author: corvin
+  Description:
+    stdr simulator with robot0 ultrasonic .
+  History:
+    20180601: intial this file.
+-->
+<launch>
+  <!--startup stdr simulator with robot0 -->
+  <include file="$(find stdr_launchers)/launch/server_with_map_and_gui_plus_robot.launch" />
+
+  <!-- startup ultrasonic_obstacle_avoidance_node -->
+  <node pkg="ultrasonic_obstacle_avoidance" type="ultrasonic_obstacle_avoidance_node" name="ultrasonic_obstacle_avoidance_node" output="screen"/>
+</launch>
+

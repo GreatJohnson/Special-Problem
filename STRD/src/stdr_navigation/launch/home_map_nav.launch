@@ -1,0 +1,22 @@
+<!--
+  Copyright: 2016-2019 ROS小课堂 www.corvin.cn
+  Author: corvin
+  Description:
+    STDR simulator robot auto navigation with amcl and move base packages.
+    load home_map to test.
+  History:
+    20190102: 加载home_map地图进行自动导航测试.
+-->
+<launch>
+  <!-- load stdr simulator with robot0 -->
+  <include file="$(find stdr_launchers)/launch/home_map_robot_gui.launch" />
+
+  <!-- startup move_base node -->
+  <include file="$(find stdr_move_base)/launch/stdr_move_base.launch" />
+
+  <!-- load home map -->
+  <include file="$(find stdr_navigation)/launch/load_home_map.launch" />
+
+  <!-- startup amcl node -->
+  <include file="$(find stdr_amcl)/launch/home_map_amcl.launch" />
+</launch>
